@@ -1,0 +1,6 @@
+# Used by flatpak-builder
+build-dir/
+.flatpak-builder/
+
+# Used for staging maven target and JDK
+prepare/

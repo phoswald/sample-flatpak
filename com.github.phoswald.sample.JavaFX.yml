@@ -1,0 +1,28 @@
+id: com.github.phoswald.sample.JavaFX
+runtime: org.freedesktop.Platform
+runtime-version: '25.08'
+sdk: org.freedesktop.Sdk
+command: sample-javafx
+finish-args:
+  - --filesystem=home
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --share=ipc
+modules:
+  - name: sample-javafx
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 sample-javafx.sh /app/bin/sample-javafx
+      - cp -r dist /app/dist
+      - cp -r jdk  /app/jdk
+    sources:
+      - type: file
+        path: sample-javafx.sh
+
+      - type: dir
+        path: prepare/maven
+        dest: dist
+
+      - type: dir
+        path: prepare/jdk
+        dest: jdk
