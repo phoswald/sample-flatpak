@@ -4,10 +4,14 @@ runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
 command: sample-javafx
 finish-args:
-  - --filesystem=home
+  # For UI, supporting both Wayland and X11
   - --socket=wayland
   - --socket=fallback-x11
   - --share=ipc
+  # For webview
+  - --share=network 
+  # For accessing database files in the home directory
+  - --filesystem=home
 modules:
   - name: sample-javafx
     buildsystem: simple
