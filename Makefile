@@ -17,9 +17,10 @@ prepare/maven:
 	mkdir -p prepare
 	ln -s ../../sample-javafx/target/sample-javafx-1.0.0-SNAPSHOT-dist prepare/maven
 
-build: prepare/maven prepare/jdk
+install: prepare/maven prepare/jdk
+	flatpak-builder --install --user --force-clean build-dir com.github.phoswald.sample.JavaFX.yml
+
+install-system: prepare/maven prepare/jdk
 	flatpak-builder --force-clean build-dir com.github.phoswald.sample.JavaFX.yml
 	flatpak build-export repo build-dir
-
-install:
 	flatpak install $(CURDIR)/repo com.github.phoswald.sample.JavaFX
