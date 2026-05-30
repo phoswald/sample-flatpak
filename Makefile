@@ -22,4 +22,4 @@ build: prepare/maven prepare/jdk
 	flatpak build-export repo build-dir
 
 install:
-	sudo flatpak install /home/philip/code/github/sample-flatpak/repo com.github.phoswald.sample.JavaFX
+	flatpak install $(CURDIR)/repo com.github.phoswald.sample.JavaFX
