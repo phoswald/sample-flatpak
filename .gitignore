@@ -4,3 +4,6 @@ build-dir/
 
 # Used for staging maven target and JDK
 prepare/
+
+# Output of flatpak-builder, can be used for installation
+repo/

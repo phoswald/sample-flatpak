@@ -16,12 +16,20 @@ modules:
   - name: sample-javafx
     buildsystem: simple
     build-commands:
-      - install -Dm755 sample-javafx.sh /app/bin/sample-javafx
+      - install -Dm755 sample-javafx.sh      /app/bin/sample-javafx
+      - install -Dm644 sample-javafx.desktop /app/share/applications/com.github.phoswald.sample.JavaFX.desktop
+      - install -Dm644 sample-javafx.png     /app/share/icons/hicolor/256x256/apps/com.github.phoswald.sample.JavaFX.png
       - cp -r dist /app/dist
       - cp -r jdk  /app/jdk
     sources:
       - type: file
         path: sample-javafx.sh
+
+      - type: file
+        path: sample-javafx.desktop
+
+      - type: file
+        path: sample-javafx.png
 
       - type: dir
         path: prepare/maven

@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Sample JavaFX
+Exec=sample-javafx
+Icon=com.github.phoswald.sample.JavaFX
+Type=Application

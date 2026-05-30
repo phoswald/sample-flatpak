@@ -1,6 +1,7 @@
 
 clean:
 	rm -rf build-dir
+	rm -rf repo
 
 prepare/jdk:
 	mkdir -p prepare/jdk
@@ -14,6 +15,7 @@ prepare/maven:
 
 build: prepare/maven prepare/jdk
 	flatpak-builder --force-clean build-dir com.github.phoswald.sample.JavaFX.yml
+	flatpak build-export repo build-dir
 
-install: prepare/maven prepare/jdk
-	flatpak-builder --user --install --force-clean build-dir com.github.phoswald.sample.JavaFX.yml
+install:
+	sudo flatpak install /home/philip/code/github/sample-flatpak/repo com.github.phoswald.sample.JavaFX
