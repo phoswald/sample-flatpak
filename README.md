@@ -7,5 +7,9 @@ Experiments with Flatpak, bundling a JavaFX application
 $ make clean
 $ make build
 $ make install
-$ flatpak run com.github.phoswald.sample.JavaFX
+
+$ flatpak run    com.github.phoswald.sample.JavaFX
+$ flatpak remove com.github.phoswald.sample.JavaFX
+
+$ make clean-all
 ~~~

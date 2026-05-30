@@ -3,6 +3,10 @@ clean:
 	rm -rf build-dir
 	rm -rf repo
 
+clean-all: clean
+	rm -rf prepare
+	rm -rf .flatpak-builder
+
 prepare/jdk:
 	mkdir -p prepare/jdk
 	curl "https://cdn.azul.com/zulu/bin/zulu25.34.17-ca-jdk25.0.3-linux_x64.tar.gz" -sS | \
